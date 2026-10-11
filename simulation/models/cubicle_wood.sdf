@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <!-- Cubicle: a few chairs (visual-only) -->
+  <model name="cubicle_wood">
+      <static>true</static>
+    <link name="cubicle_wood_link">
+        <pose> 0 0 0 0 0 0</pose>
+      <visual name="back1_vis">
+        <pose>0 0.75 0.4 0 0 0</pose>
+        <geometry><box><size>2.0 0.10 0.80</size></box></geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://textures/office_desk_diffuse.png</albedo_map>
+              <roughness>0.8</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="back2_vis">
+        <pose>-2 0.75 0.4 0 0 0</pose>
+        <geometry><box><size>2.0 0.10 0.80</size></box></geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://textures/plywood256x256.png</albedo_map>
+              <roughness>0.8</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="back3_vis">
+        <pose>2 0.75 0.4 0 0 0</pose>
+        <geometry><box><size>2.0 0.10 0.80</size></box></geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://textures/plywood256x256.png</albedo_map>
+              <roughness>0.8</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="left_vis">
+        <pose>-3.0 0 0.4 0 0 0</pose>
+        <geometry><box><size>0.10 1.5 0.80</size></box></geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://textures/plywood256x256.png</albedo_map>
+              <roughness>0.8</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="right_vis">
+        <pose>3.0 0 0.4 0 0 0</pose>
+        <geometry><box><size>0.10 1.5 0.80</size></box></geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://textures/plywood256x256.png</albedo_map>
+              <roughness>0.8</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      
+    </link>
+      
+  </model>
+</sdf>

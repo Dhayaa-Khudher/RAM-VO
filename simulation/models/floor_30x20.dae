@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+
+  <asset>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+
+  <library_geometries>
+    <geometry id="floor_geom" name="floor_30x20">
+      <mesh>
+
+        <!-- Positions: 30m x 20m centered at origin -->
+        <source id="floor_positions">
+          <float_array id="floor_positions_array" count="12">
+            -15 -10 0
+             15 -10 0
+             15  10 0
+            -15  10 0
+          </float_array>
+          <technique_common>
+            <accessor source="#floor_positions_array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+
+        <!-- UVs: tile 1 texture per meter (30 repeats in X, 20 repeats in Y) -->
+        <source id="floor_uvs">
+          <float_array id="floor_uvs_array" count="8">
+            0   0
+            30  0
+            30  20
+            0   20
+          </float_array>
+          <technique_common>
+            <accessor source="#floor_uvs_array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+
+        <!-- Normals: 4 normals (one per vertex) -->
+        <source id="floor_normals">
+          <float_array id="floor_normals_array" count="12">
+            0 0 1
+            0 0 1
+            0 0 1
+            0 0 1
+          </float_array>
+          <technique_common>
+            <accessor source="#floor_normals_array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+
+        <vertices id="floor_vertices">
+          <input semantic="POSITION" source="#floor_positions"/>
+        </vertices>
+
+        <!-- Two triangles. Indices are (VERTEX, NORMAL, TEXCOORD) -->
+        <triangles count="2">
+          <input semantic="VERTEX" source="#floor_vertices" offset="0"/>
+          <input semantic="NORMAL" source="#floor_normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#floor_uvs" offset="2" set="0"/>
+
+          <p>
+            0 0 0   1 1 1   2 2 2
+            0 0 0   2 2 2   3 3 3
+          </p>
+        </triangles>
+
+      </mesh>
+    </geometry>
+  </library_geometries>
+
+  <library_visual_scenes>
+    <visual_scene id="Scene">
+      <node id="FloorNode" name="FloorNode">
+        <instance_geometry url="#floor_geom"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+
+</COLLADA>

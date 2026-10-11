@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <authoring_tool>Gemini AI</authoring_tool>
+    </contributor>
+    <created>2026-02-02T20:30:00</created>
+    <modified>2026-02-02T20:30:00</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="WallEffect">
+      <profile_COMMON>
+        <newparam sid="WallSurface-surface">
+          <surface type="2D">
+            <init_from>WallTexture</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="WallSurface-sampler">
+          <sampler2D>
+            <source>WallSurface-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
+            <magfilter>LINEAR</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <diffuse>
+              <texture texture="WallSurface-sampler" texcoord="UVSET0"/>
+            </diffuse>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="WallTexture" name="WallTexture">
+      <init_from>textures/Red.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="WallMaterial" name="WallMaterial">
+      <instance_effect url="#WallEffect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="WallMesh" name="Wall">
+      <mesh>
+        <source id="WallMesh-pos">
+          <float_array id="WallMesh-pos-array" count="24">
+            -5 -0.075 0  5 -0.075 0  -5 0.075 0  5 0.075 0
+            -5 -0.075 2.5  5 -0.075 2.5  -5 0.075 2.5  5 0.075 2.5
+          </float_array>
+          <technique_common>
+            <accessor source="#WallMesh-pos-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WallMesh-norm">
+          <float_array id="WallMesh-norm-array" count="18">
+            0 -1 0   0 1 0   0 0 -1   0 0 1   -1 0 0   1 0 0
+          </float_array>
+          <technique_common>
+            <accessor source="#WallMesh-norm-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WallMesh-uv">
+          <float_array id="WallMesh-uv-array" count="8">
+            0 0   20 0   0 2.5   20 2.5
+          </float_array>
+          <technique_common>
+            <accessor source="#WallMesh-uv-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="WallMesh-vertices">
+          <input semantic="POSITION" source="#WallMesh-pos"/>
+        </vertices>
+        <triangles material="WallMaterial" count="2">
+          <input semantic="VERTEX" source="#WallMesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#WallMesh-norm" offset="1"/>
+          <input semantic="TEXCOORD" source="#WallMesh-uv" offset="2" set="0"/>
+          <p>0 0 0  1 0 1  4 0 2  1 0 1  5 0 3  4 0 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="WallNode" name="WallNode">
+        <instance_geometry url="#WallMesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="WallMaterial" target="#WallMaterial"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

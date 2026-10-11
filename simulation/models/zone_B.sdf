@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <!-- Zone B: a few chairs (visual-only) -->
+  <model name="furniture_zone_B">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose> 
+    <link name="zone_B_link">
+            <!-- Chair 1 -->
+        <visual name="chair_1B_vis">
+          <pose>-1.6 0.5 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://office_chair.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <!-- Desk 1 -->
+        <visual name="desk_1B_vis">
+          <pose>-1.6 0 0 0 0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://desk.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <pbr>
+              <metal>
+                <albedo_map>model://textures/Blue.png</albedo_map>
+                <roughness>0.8</roughness>
+                <metalness>0.0</metalness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+
+        <!-- Chair 2 -->
+        <visual name="chair_2B_vis">
+          <pose>1.6 0.5 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://office_chair.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <!-- Desk 2 -->
+        <visual name="desk_2B_vis">
+          <pose>1.6 0 0 0 0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://desk.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <pbr>
+              <metal>
+                <albedo_map>model://textures/Gray.png</albedo_map>
+                <roughness>0.8</roughness>
+                <metalness>0.0</metalness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+    </link>
+      <include>
+      <pose>0 0 0 0 0 3.14</pose>
+       <uri>model://cubicle_wood.sdf</uri>
+    </include>
+  </model>
+</sdf>

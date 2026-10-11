@@ -1,0 +1,5 @@
+condition,policy,admissions_mean,admissions_sd,evictions_mean,evictions_sd,final_occupancy_mean,final_occupancy_sd,saturation_fraction
+Normal,Proposed,145,3,45,3,100,0,1
+Normal,Novelty-only,213.25,4,113.25,4,100,0,1
+Combined,Proposed,96,17.44,4.67,4.31,91.33,13.29,0.5
+Combined,Novelty-only,138,3,38,3,100,0,1

@@ -1,0 +1,25 @@
+panel,condition,method,ate_600m_mean,ate_600m_sd,ate_1000m_mean,ate_1000m_sd,endpoint_1000m_mean,endpoint_1000m_sd,normalized_endpoint_percent_mean,normalized_endpoint_percent_sd,completed_of_9
+A,Normal,Proposed,0.41,0.06,0.63,0.09,0.71,0.1,0.071,0.011,9
+A,Normal,Memory-augmented CNN--Transformer,0.66,0.09,1.04,0.15,1.18,0.17,0.118,0.018,9
+A,Normal,Adaptive-memory VO (adapted),0.54,0.08,0.86,0.12,0.97,0.14,0.097,0.015,9
+A,Normal,Memory-free CNN--Transformer,0.83,0.12,1.37,0.2,1.56,0.23,0.156,0.024,8
+A,Normal,ORB-SLAM3 (LC disabled),0.79,0.15,1.42,0.27,1.61,0.31,0.161,0.032,7
+A,Normal,ORB-SLAM3 (LC enabled),0.72,0.13,1.21,0.22,1.37,0.25,0.137,0.026,9
+A,Combined,Proposed,0.87,0.13,1.28,0.19,1.44,0.22,0.144,0.023,9
+A,Combined,Memory-augmented CNN--Transformer,1.36,0.2,2.04,0.3,2.31,0.34,0.231,0.036,8
+A,Combined,Adaptive-memory VO (adapted),1.12,0.17,1.71,0.25,1.94,0.29,0.194,0.03,9
+A,Combined,Memory-free CNN--Transformer,1.71,0.25,2.62,0.39,2.98,0.44,0.298,0.046,7
+A,Combined,ORB-SLAM3 (LC disabled),1.64,0.31,2.71,0.52,3.08,0.59,0.308,0.061,6
+A,Combined,ORB-SLAM3 (LC enabled),1.48,0.27,2.31,0.42,2.62,0.48,0.262,0.049,8
+B,Normal,Proposed,0.36,0.05,0.54,0.08,0.61,0.09,0.061,0.01,9
+B,Normal,Memory-augmented CNN--Transformer,0.58,0.08,0.89,0.13,1.01,0.15,0.101,0.016,9
+B,Normal,Adaptive-memory VO (adapted),0.47,0.07,0.74,0.11,0.83,0.12,0.083,0.013,9
+B,Normal,Memory-free CNN--Transformer,0.71,0.1,1.16,0.17,1.32,0.2,0.132,0.021,9
+B,Normal,ORB-SLAM3 (LC disabled),0.68,0.13,1.19,0.23,1.35,0.26,0.135,0.027,8
+B,Normal,ORB-SLAM3 (LC enabled),0.42,0.08,0.61,0.11,0.69,0.12,0.069,0.013,9
+B,Combined,Proposed,0.74,0.11,1.09,0.16,1.22,0.19,0.122,0.02,9
+B,Combined,Memory-augmented CNN--Transformer,1.17,0.17,1.76,0.26,1.99,0.29,0.199,0.031,8
+B,Combined,Adaptive-memory VO (adapted),0.96,0.14,1.47,0.22,1.66,0.25,0.166,0.026,9
+B,Combined,Memory-free CNN--Transformer,1.48,0.22,2.27,0.34,2.58,0.38,0.258,0.04,7
+B,Combined,ORB-SLAM3 (LC disabled),1.42,0.27,2.36,0.45,2.68,0.51,0.268,0.053,6
+B,Combined,ORB-SLAM3 (LC enabled),0.86,0.16,1.28,0.24,1.45,0.27,0.145,0.028,8
